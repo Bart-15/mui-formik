@@ -1,33 +1,41 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '@/data/store/store'
+import type { RootState } from '@/data/store/store';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 export type TCounter = {
-    value: number
-}
+  value: number;
+};
 
 const initialState: TCounter = {
-    value: 0
-}
+  value: 0,
+};
 
 export const counterSlice = createSlice({
-    name: 'counter',
-    initialState,
-    reducers: {
-        increment: state => {
-            state.value += 1
-        },
-        decrement:  state => {
-            state.value -= 1
-        },
-        incByAmt: (state, action: PayloadAction<number>) => {
-            state.value += action.payload
-        }
-    }
-})
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment: (state) => {
+      state.value += 1;
+    },
+    decrement: (state) => {
+      if (state.value > 0) {
+        state.value -= 1;
+      }
+    },
+    incByAmt: (state, action: PayloadAction<number>) => {
+      state.value += action.payload;
+    },
+    resetCounter: (state) => {
+      if (state.value === 0) return;
 
-export const { increment, decrement, incByAmt } = counterSlice.actions
+      state.value = 0;
+    },
+  },
+});
 
-export const selectCount = (state:RootState) => state.counterReducer.value;
+export const { increment, decrement, incByAmt, resetCounter } =
+  counterSlice.actions;
 
-export default counterSlice.reducer
+export const selectCount = (state: RootState) => state.counterReducer.value;
+
+export default counterSlice.reducer;

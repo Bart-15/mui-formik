@@ -1,5 +1,5 @@
-import { string, object } from 'yup';
+import { object, string } from 'yup';
 
 export const taskSchema = object({
-    task: string().required("Task field is required")
-})
+  task: string().required('Task field is required'),
+});
