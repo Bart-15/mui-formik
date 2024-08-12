@@ -1,5 +1,5 @@
-import TaskTable from '@//Tasks/TaskTable';
 import { MyTextField } from '@/components/Form/FormFields';
+import TaskTable from '@/components/Tasks/TaskTable';
 import { addTask, loadTasks } from '@/data/function/taskFunction';
 import { RootState } from '@/data/store/store';
 import { taskSchema } from '@/validation/task';

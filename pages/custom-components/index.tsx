@@ -1,5 +1,5 @@
-import { MagicPaper } from '@//StyledMui/Paper';
 import { DangerButton, SuccessButton } from '@/components/StyledMui/Button';
+import { MagicPaper } from '@/components/StyledMui/Paper';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -11,6 +11,7 @@ const CustomComponents = () => {
   const gridArr = Array.from({ length: 2 }, (_, index) => index + 1);
   return (
     <Container>
+      <Typography variant="h1">Custom Components</Typography>
       <Stack alignContent="center" direction="row" spacing={2} mb={10}>
         <DangerButton disableRipple disableElevation>
           Danger Button

@@ -1,4 +1,4 @@
-import { DangerButton, SuccessButton } from '@//StyledMui/Button';
+import { DangerButton, SuccessButton } from '@/components/StyledMui/Button';
 import {
   decrement,
   increment,
