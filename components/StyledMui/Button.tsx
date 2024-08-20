@@ -1,5 +1,5 @@
 import { Button, styled } from '@mui/material';
-import { deepOrange, green } from '@mui/material/colors';
+import { deepOrange, green, lightGreen } from '@mui/material/colors';
 
 export const DangerButton = styled(Button)(() => ({
   backgroundColor: deepOrange[800],
@@ -15,14 +15,13 @@ export const DangerButton = styled(Button)(() => ({
 }));
 
 export const SuccessButton = styled(Button)(() => ({
-  backgroundColor: green[800],
+  backgroundColor: green[500],
   textTransform: 'none',
-  letterSpacing: '.5px',
-  fontSize: '1rem',
-  borderRadius: '8px',
-  padding: '5px 10px',
+  borderRadius: '0',
+  fontSize: '14px',
+  fontWeight: '400',
   color: 'white',
   '&:hover': {
-    background: green[600],
+    background: lightGreen[600],
   },
 }));

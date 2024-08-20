@@ -6,6 +6,7 @@ import {
   TextFieldProps,
 } from '@mui/material';
 import { useField } from 'formik';
+import { StyledLoginTextField } from '../StyledMui/TextField';
 
 export interface MyCheckBoxProps extends CheckboxProps {
   name: string;
@@ -32,6 +33,7 @@ export const MyCheckBox = (props: MyCheckBoxProps) => {
 export type MyTextFieldProps = {
   name: string;
   label?: string;
+  testId?: string;
 } & TextFieldProps;
 
 export const MyTextField = (props: MyTextFieldProps) => {
@@ -41,6 +43,21 @@ export const MyTextField = (props: MyTextFieldProps) => {
 
   return (
     <TextField
+      error={meta.error && meta.touched ? true : false}
+      helperText={meta.error && meta.touched ? meta.error : ''}
+      {...props}
+      {...field}
+    />
+  );
+};
+
+export const LoginField = (props: MyTextFieldProps) => {
+  const [field, meta, helpers] = useField({
+    name: props.name,
+  });
+
+  return (
+    <StyledLoginTextField
       error={meta.error && meta.touched ? true : false}
       helperText={meta.error && meta.touched ? meta.error : ''}
       {...props}
