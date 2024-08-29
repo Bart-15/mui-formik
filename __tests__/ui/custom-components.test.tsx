@@ -5,7 +5,7 @@ test(`Custom components should display correct heading "Custom Componnets"`, () 
   render(<CustomComponents />);
 
   const heading = screen.getByRole('heading', {
-    name: /custom components/i,
+    name: /custom componentss/i,
   });
 
   expect(heading).toBeInTheDocument();
