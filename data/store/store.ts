@@ -3,10 +3,14 @@ import taskReducer from '@/data/reducers/tasksSlice';
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 
+export const reducerList = {
+  counterReducer,
+  taskReducer,
+};
+
 export const store = configureStore({
   reducer: {
-    counterReducer,
-    taskReducer,
+    ...reducerList,
   },
 
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),

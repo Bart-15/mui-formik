@@ -6,7 +6,7 @@ export type TCounter = {
   value: number;
 };
 
-const initialState: TCounter = {
+export const initialState: TCounter = {
   value: 0,
 };
 
